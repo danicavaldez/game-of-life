@@ -5,8 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Button from '@material-ui/core/Button';
 import Rules from "./Rules"
 
-
-
 import Presets from "./Presets";
 
 const neighborOps = [
@@ -72,7 +70,7 @@ function App() {
               const newI = i + x;
               const newJ = j + y;
               if (
-                // Majing sure neighbors are within bounds and cannot go below or above limits of the grid
+                // Making sure neighbors are within bounds and cannot go below or above limits of the grid
                 newI >= 0 &&
                 newI < gridSize &&
                 newJ >= 0 &&
@@ -84,6 +82,7 @@ function App() {
 
             if (neighbors < 2 || neighbors > 3) {
               gridCopy[i][j] = 0;
+
             } else if (g[i][j] === 0 && neighbors === 3) {
               gridCopy[i][j] = 1;
             }
@@ -115,7 +114,7 @@ function App() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: `repeat(${gridSize}, 1rem)`,
+                gridTemplateColumns: `repeat(${gridSize}, 18px)`,
               }}
             >
               {grid.map((rows, i) =>
@@ -162,7 +161,7 @@ function App() {
                   setRunning(false);
                 }}
                 >
-                Step
+                Next Step
                 </Button>
                 <Button
                   style={{minWidth: "100px"}}
@@ -175,11 +174,11 @@ function App() {
                         )
                       );
                     }
-
+                    setGeneration(0)
                     setGrid(rows);
                   }}
                 >
-                  Random
+                  Randomize
                 </Button>
                 <Button
                   style={{minWidth: "100px"}}
@@ -206,7 +205,10 @@ function App() {
                   </select>
                   <Button
                     style={{minWidth: "180px"}}
-                    onClick={setGridToPreset}
+                    onClick={() => {
+                      setGridToPreset()
+                      setGeneration(0)
+                    }}
                   >
                     Update Grid
                   </Button>
