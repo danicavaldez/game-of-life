@@ -11,7 +11,7 @@ const Rules = () => {
       <Paper className={classes.paper}>
                 <div>
                   <h2>What is Conway's Game of Life?</h2>
-                  <p>The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</p>
+                  <p>The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent.</p>
                 </div>
               </Paper>
       <Paper className={classes.paper}>
